@@ -43,7 +43,7 @@ boot2docker ssh 'echo -e "#!/bin/bash" | sudo tee -a /var/lib/boot2docker/bootlo
 boot2docker ssh 'echo "sudo umount /Users" | sudo tee -a /var/lib/boot2docker/bootlocal.sh'
 boot2docker ssh 'echo "sudo /usr/local/etc/init.d/nfs-client stop" | sudo tee -a /var/lib/boot2docker/bootlocal.sh'
 boot2docker ssh 'echo "sudo /usr/local/etc/init.d/nfs-client start" | sudo tee -a /var/lib/boot2docker/bootlocal.sh'
-boot2docker ssh 'echo "sudo mount 22.22.22.2:/Users /Users -o rw,async,noatime,rsize=32768,wsize=32768,proto=tcp" | sudo tee -a /var/lib/boot2docker/bootlocal.sh'
+boot2docker ssh 'echo "sudo mount 22.22.22.2:/Users /Users -o rw,async,noatime,rsize=32768,wsize=32768,proto=tcp,nfsvers=3" | sudo tee -a /var/lib/boot2docker/bootlocal.sh'
 
 echo " # Baixando fix de certificados para boot2docker >= 1.7.0"
 boot2docker ssh 'sudo curl -o /var/lib/boot2docker/profile https://gist.githubusercontent.com/garthk/d5a17007c277aa5c76de/raw/3d09c77aae38b4f2809d504784965f5a16f2de4c/profile'
